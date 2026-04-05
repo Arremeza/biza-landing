@@ -1,0 +1,71 @@
+import HeroSection from "@/components/HeroSection";
+import FeaturesSection from "@/components/FeaturesSection";
+import CatalogSection from "@/components/CatalogSection";
+import PricingSection from "@/components/PricingSection";
+import DevicesSection from "@/components/DevicesSection";
+import FAQSection from "@/components/FAQSection";
+import Footer from "@/components/Footer";
+
+const Index = () => {
+  return (
+    <div className="min-h-screen bg-[#0A0A0F] overflow-x-hidden">
+      {/* Floating navbar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-3">
+        <div className="max-w-6xl mx-auto flex items-center justify-between bg-[#0A0A0F]/70 backdrop-blur-xl border border-white/5 rounded-2xl px-6 py-3">
+          <img
+            src="/assets/biza-logo.png"
+            alt="BIZA+"
+            className="h-7"
+          />
+          <div className="hidden md:flex items-center gap-8">
+            <a
+              href="#features"
+              className="text-[#A0A0B0] hover:text-white text-sm font-medium transition-colors"
+            >
+              Características
+            </a>
+            <a
+              href="#catalog"
+              className="text-[#A0A0B0] hover:text-white text-sm font-medium transition-colors"
+            >
+              Catálogo
+            </a>
+            <a
+              href="#pricing"
+              className="text-[#A0A0B0] hover:text-white text-sm font-medium transition-colors"
+            >
+              Planes
+            </a>
+            <a
+              href="#faq"
+              className="text-[#A0A0B0] hover:text-white text-sm font-medium transition-colors"
+            >
+              FAQ
+            </a>
+          </div>
+          <button
+            className="bg-gradient-to-r from-[#00E5FF] to-[#B026FF] text-white text-sm font-bold px-5 py-2 rounded-xl hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-300"
+            onClick={() =>
+              window.open(
+                "https://wa.me/521234567890?text=Hola!%20Me%20interesa%20BIZA%2B%20TV",
+                "_blank"
+              )
+            }
+          >
+            Contratar
+          </button>
+        </div>
+      </nav>
+
+      <HeroSection />
+      <FeaturesSection />
+      <CatalogSection />
+      <PricingSection />
+      <DevicesSection />
+      <FAQSection />
+      <Footer />
+    </div>
+  );
+};
+
+export default Index;

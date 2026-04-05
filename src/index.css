@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 240 15% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 15% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 186 100% 50%;
+    --primary-foreground: 240 20% 4%;
+
+    --secondary: 275 100% 57%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 275 100% 57%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 10% 15%;
+    --input: 240 10% 15%;
+    --ring: 186 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 240 15% 6%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 186 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 186 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[#0A0A0F] text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom animations */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.4);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-scroll-dot {
+  animation: scroll-dot 1.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Hide scrollbar for catalog */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom selection color */
+::selection {
+  background: rgba(0, 229, 255, 0.3);
+  color: white;
+}
