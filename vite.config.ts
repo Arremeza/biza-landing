@@ -33,6 +33,11 @@ export default defineConfig(({ mode }) => ({
     },
     watch: { usePolling: true, interval: 600 },
   },
+  preview: {
+    host: '0.0.0.0',
+    port: parseInt(process.env.PORT || '4173'),
+    allowedHosts: true,
+  },
   build: {
     rollupOptions: {
       output: {
